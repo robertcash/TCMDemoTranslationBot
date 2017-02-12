@@ -10,5 +10,5 @@ class MessengerParser:
         self.messenger_id = message_body['sender']['id']
 
         # Grab message and get text out of JSON
-        message = request['message']
+        message = message_body['message']
         self.text = message['text']
