@@ -11,17 +11,16 @@ def hello_world():
 
 @application.route('/webhook', methods=['GET', 'POST'])
 def webhook():
-    if request.method == 'GET':
-        # Webhook is verified with Facebook Messenger https://developers.facebook.com/docs/graph-api/webhooks
-        if request.args.get('hub.verify_token') == '12345':
-            return Response(request.args.get('hub.challenge'))
-        else:
-            return Response('Wrong validation token.')
-    else:
-        # Here messages in a form of JSON are received, code for this is handled in bot.py
-        return bot.response_handler(request.get_json())
     try:
-        pass
+        if request.method == 'GET':
+            # Webhook is verified with Facebook Messenger https://developers.facebook.com/docs/graph-api/webhooks
+            if request.args.get('hub.verify_token') == '12345':
+                return Response(request.args.get('hub.challenge'))
+            else:
+                return Response('Wrong validation token.')
+        else:
+            # Here messages in a form of JSON are received, code for this is handled in bot.py
+            return bot.response_handler(request.get_json())
     except:
         return Response('Application error.')
 
