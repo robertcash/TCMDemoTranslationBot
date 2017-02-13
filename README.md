@@ -39,7 +39,7 @@ This bot has multiple files and is structured as followed:
 
 In this section, I will cover the important parts of the code of this project. You can skip this step if you don't care about the implementation details because you can just run this project code on Heroku to get a working bot.
 
-##### 1. Creating the Flask App
+#### 1. Creating the Flask App
 
 We need to use Flask, a web framework, to have a server-side application that lives in the cloud. The code for this is rather vanilla and is a simple copy and paste for the most part from the application.py file to create the Flask app, but I will focus on the unique part here. If you're intetested in the nuts and bolts of that vanilla code, Flask has great documentation on their site here: http://flask.pocoo.org.
 
@@ -73,7 +73,7 @@ return bot.response_handler(request.get_json())
 ```
 is called.
 
-##### 2. Creating the Bot Logic
+#### 2. Creating the Bot Logic
 Once Facebook calls that route, this function is triggered:
 
 ```
@@ -242,7 +242,7 @@ We are now done with our bot, all we have to do is get it online!
 
 This is the most annoying part of the process of creating a bot. Google's API site is notoriously confusing, Heroku can be a bit scary the first time, and Facebook's docs on linking a bot to a page can be a little tricky. With this step, we will also be filling in the empty GOOGLE_API_KEY and FB_ACCESS_TOKEN variables we saw in our files.  
 
-##### 1. Getting the Google API Key
+#### 1. Getting the Google API Key
 
 First thing to conquer is getting an API key so we can call Google's Translation API. An API key is needed because Google's API's are services that aren't free so this is how they monitor who uses their API's.
 
@@ -254,7 +254,7 @@ The last step after enabling the API is getting an API key. Go to "credientials"
 GOOGLE_API_KEY = 'YOUR API KEY HERE'
 ```
 
-##### 2. Getting a Facebook Page Access Token
+#### 2. Getting a Facebook Page Access Token
 We need an acces token to send messages to the bot connected with our Page, but first we need a page. Go to your regular Facebook and create a page, this is all you have to do for this step, it's pretty simple.
 
 Next, go to https://developers.facebook.com/ and become a developer. After you do this, follow the steps on the page, but ignore step 2 "Setup Webhook" (this comes after we deploy to Heroku) and don't bother with the code or steps 5-8.
@@ -265,7 +265,7 @@ Now you should have an access token, go copy and paste this at this line of code
 FB_ACCESS_TOKEN = 'YOUR ACCESS TOKEN HERE'
 ```
 
-##### 3. Deploying to Heroku
+#### 3. Deploying to Heroku
 
 If you've made a Heroku account (heroku.com) and installed git and the Heroku CLI (details in the installation part of the tutorial), you're ready for this step.
 
@@ -301,7 +301,7 @@ git push heroku master
 
 To find the URL of your application on Heroku, go to your Heroku dashboard (https://dashboard.heroku.com/apps) and find your app under "Personal apps". Next click "settings" and find "Domain" under "Domains and certificates". That URL is your application URL you give to Facebook with the "/webhook" route like this: "https://eng2port.herokuapp.com/webhook".
 
-##### 4. Subcribing the Webhook to Facebook
+#### 4. Subcribing the Webhook to Facebook
 
 Now that you've deployed your application and have a URL for it, we can follow step 2 at this link: https://developers.facebook.com/docs/messenger-platform/guides/quick-start. Make sure you give Facebook your /webhook route in the url like this: https://eng2port.herokuapp.com/webhook. After you do this, go ahead and message your bot from the page you created!
 
