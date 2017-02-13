@@ -255,9 +255,9 @@ GOOGLE_API_KEY = 'YOUR API KEY HERE'
 ```
 
 #### 2. Getting a Facebook Page Access Token
-We need an acces token to send messages to the bot connected with our Page, but first we need a page. Go to your regular Facebook and create a page, this is all you have to do for this step, it's pretty simple.
+We need an access token to send messages to the bot connected with our Page, but first we need a page. Go to your regular Facebook and create a page, this is all you have to do for this step, it's pretty simple.
 
-Next, go to https://developers.facebook.com/ and become a developer. After you do this, follow the steps on the page, but ignore step 2 "Setup Webhook" (this comes after we deploy to Heroku) and don't bother with the code or steps 5-8.
+Next, go to https://developers.facebook.com/ and become a developer. After you do this, follow the steps on this page: https://developers.facebook.com/docs/messenger-platform/guides/quick-start, but ignore step 2 "Setup Webhook" (this comes after we deploy to Heroku) and don't bother with the code or steps 5-8.
 
 Now you should have an access token, go copy and paste this at this line of code in messenger_api_requests.py:
 
