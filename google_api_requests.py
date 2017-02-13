@@ -2,7 +2,7 @@
 import requests
 
 # Constants
-GOOGLE_API_KEY = 'YOUR KEY HERE'
+GOOGLE_API_KEY = 'YOUR API KEY'
 GOOGLE_TRANSLATE_URL = 'https://translation.googleapis.com/language/translate/v2'
 
 def translate_message(text, target_lang):
